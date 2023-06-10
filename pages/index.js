@@ -1,7 +1,7 @@
 import Feature from "./components/Feature"
 import Hero from "./components/Hero"
 import Review from "./components/Reviews"
-import CTA from "./components/CTA"
+import Contact from "./components/Contact"
 
 export default function PreRender() {
   return (
@@ -9,7 +9,7 @@ export default function PreRender() {
       <Hero />
       <Feature />
       <Review />
-      <CTA />
+      <Contact />
     </div>
   )
 }

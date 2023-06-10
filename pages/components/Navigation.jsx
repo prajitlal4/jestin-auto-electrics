@@ -10,8 +10,6 @@ const services = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#'},
   { name: 'Engagement', description: 'Speak directly to your customers', href: '#'},
   { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#'},
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#'},
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#'},
 ]
 
 function classNames(...classes) {
@@ -33,14 +31,14 @@ export default function Navigation() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 z-10"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-12 z-10">
           <Popover className="relative z-10">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Services
@@ -76,20 +74,20 @@ export default function Navigation() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#feature" className="text-sm font-semibold leading-6 text-gray-900">
             About
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#reviews" className="text-sm font-semibold leading-6 text-gray-900">
             Reviews
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#contact" className="text-sm font-semibold leading-6 text-gray-900">
             Contact
           </a>
         </Popover.Group>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-20" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -137,30 +135,25 @@ export default function Navigation() {
                   )}
                 </Disclosure>
                 <a
-                  href="#"
+                  href="#feature"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  Features
+                  About
                 </a>
                 <a
-                  href="#"
+                  href="#reviews"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  Marketplace
+                  Reviews
                 </a>
                 <a
-                  href="#"
+                  href="#contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  Company
-                </a>
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
+                  Contact
                 </a>
               </div>
             </div>
