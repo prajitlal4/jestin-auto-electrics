@@ -5,11 +5,12 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 const services = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#'},
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#'},
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#'},
+  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '/services/service1'},
+  { name: 'Engagement', description: 'Speak directly to your customers', href: '/services/service2'},
+  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '/services/service3'},
 ]
 
 function classNames(...classes) {
@@ -23,10 +24,10 @@ export default function Navigation() {
     <header className="bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -55,34 +56,35 @@ export default function Navigation() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {services.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex-auto">
-                        <a href={item.href} className="block font-semibold text-gray-900">
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
+                {({ close }) => (
+                  <div className="p-4">
+                    {services.map((item) => (
+                      <div
+                        key={item.name}
+                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      >
+                        <div className="flex-auto">
+                          <Link href={item.href} className="block font-semibold text-gray-900" onClick={() => close()}>
+                            {item.name}
+                            <span className="absolute inset-0" />
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </Popover.Panel>
             </Transition>
           </Popover>
-
-          <a href="#feature" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link href="/#feature" className="text-sm font-semibold leading-6 text-gray-900">
             About
-          </a>
-          <a href="#reviews" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link href="/#reviews" className="text-sm font-semibold leading-6 text-gray-900">
             Reviews
-          </a>
-          <a href="#contact" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link href="/#contact" className="text-sm font-semibold leading-6 text-gray-900">
             Contact
-          </a>
+          </Link>
         </Popover.Group>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -126,6 +128,7 @@ export default function Navigation() {
                             as="a"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
                           </Disclosure.Button>
