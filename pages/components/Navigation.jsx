@@ -21,7 +21,7 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header className="bg-white sticky top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -123,41 +123,41 @@ export default function Navigation() {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...services].map((item) => (
-                          <Disclosure.Button
+                          <Link
                             key={item.name}
-                            as="a"
+                            as="Link"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
-                          </Disclosure.Button>
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>
                   )}
                 </Disclosure>
-                <a
-                  href="#feature"
+                <Link
+                  href="/#feature"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
-                </a>
-                <a
-                  href="#reviews"
+                </Link>
+                <Link
+                  href="/#reviews"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Reviews
-                </a>
-                <a
-                  href="#contact"
+                </Link>
+                <Link
+                  href="/#contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contact
-                </a>
+                </Link>
               </div>
             </div>
           </div>
