@@ -1,49 +1,50 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 
-export default function Service3() {
+export default function Service4() {
   return (
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Specialized in Heavy Mechanical Mobile Repairs </h1>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Specialized Welder/Boilermaker</h1>
         <p className="mt-6 text-xl leading-8">
-        Jestin Auto Electrics stands out for its specialization in heavy mechanical mobile repairs. We understand that in industries like construction, 
-        mining, and transport, downtime equals lost revenue. That's why we have dedicated our expertise to deliver rapid, effective repairs for all 
-        types of heavy mobile machinery. 
-        <br /><br />
-        Our team of experienced technicians can handle a wide array of mechanical issues, ensuring your heavy machinery is back in operation as quickly as possible.
+          We also excel in providing specialized welder and boilermaker services. Our professionals masterfully handle MIG, TIG, and stick welding processes, 
+          working with various materials such as aluminum, stainless steel, and cast iron. 
+          <br /><br />
+          From intricate fabrications to heavy-duty structural work, we deploy precise welding techniques and boilermaking skills to meet your specific needs. 
+          Our work is guided by stringent safety standards and a commitment to durable, high-quality outcomes.
+          <br /><br />
         </p>
         <div className="mt-10 max-w-2xl">
           <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
             <li className="flex gap-x-3">
               <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
               <span>
-                <strong className="font-semibold text-gray-900">Rapid response and repair for heavy mobile machinery</strong>
+                <strong className="font-semibold text-gray-900">Expertise in MIG, TIG, and stick welding for a variety of materials</strong>
               </span>
             </li>
             <li className="flex gap-x-3">
               <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
               <span>
-                <strong className="font-semibold text-gray-900">Wide array of mechanical repair services</strong>
+                <strong className="font-semibold text-gray-900">Skilled fabrication and heavy-duty structural work</strong>
               </span>
             </li>
             <li className="flex gap-x-3">
               <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
               <span>
-                <strong className="font-semibold text-gray-900">Experienced technicians ensuring minimal downtime</strong>
+                <strong className="font-semibold text-gray-900">Adherence to high safety standards and commitment to quality</strong>
               </span>
             </li>
           </ul>
         </div>
         <img
-          src="https://img.freepik.com/free-photo/combine-machine-service_146671-19097.jpg?w=1380&t=st=1687582258~exp=1687582858~hmac=d565d77936b886d4fe4977a038cde017f521781d571222c8baccfd15576e908f"
+          src="https://img.freepik.com/free-photo/process-creating-new-metal-parts-busy-workshop-made-by-worker_613910-17218.jpg?w=1380&t=st=1687582685~exp=1687583285~hmac=71158d6b81fd879d323ad5357476d8f495c9ca39868e1c54abee06e52081fb55"
           alt=""
           className="inset-0 -z-10 h-full w-full object-cover brightness-[.80] mt-16"
         />
         <div className="mx-auto max-w-2xl pt-20">
           <div className="text-center">
             <p className="mt-6 text-xl leading-8 text-gray-900 font-medium">
-              Give us a call or message and get started.
+              Need our skills? Get in touch now.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link

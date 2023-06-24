@@ -1,25 +1,22 @@
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
+import { ArrowPathIcon, StarIcon, FaceSmileIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'One-Stop Solution for All Your Needs',
     description:
-      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-    href: '#',
-    icon: CloudArrowUpIcon,
+      "Your time is valuable. That's why we offer a wide array of tailored, high-quality services under one roof. Simplify your tasks, and trust in our commitment to meet all your unique needs in an efficient, comprehensive manner.",
+    icon: StarIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'AutoElectrical Service with a Smile',
     description:
-      'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
-    href: '#',
-    icon: LockClosedIcon,
+    "Dealing with AutoElectrical issues doesn't need to be stressful. Our skilled team delivers expert solutions with a smile, ensuring your AutoElectrical needs are met with warm, approachable, and knowledgeable service.",
+    icon: FaceSmileIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Comprehensive Service, Single Company',
     description:
-      'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
-    href: '#',
+    "Whether it's maintenance, repairs, or consultations, we've got you covered. We're your single, reliable source for all-around, efficient service. Trust in our commitment to your satisfaction, as we strive to be the company that fulfills all your service needs.",
     icon: ArrowPathIcon,
   },
 ]
@@ -30,11 +27,10 @@ export default function Feature() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            From family cars to heavy machinery, we do it all.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            We understand that reliable operation of your vehicles and machinery is vital, whether you&apos;re navigating city streets or managing a busy mine site. Our skilled team is equipped with advanced technology to handle auto electrical issues across a diverse range of equipment - cars, heavy machinery, mine site equipment, and more.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -42,15 +38,12 @@ export default function Feature() {
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                  <feature.icon className="h-5 w-5 flex-none text-yellow-500" aria-hidden="true" />
                   {feature.name}
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
-                    <a href={feature.href} className="text-sm font-semibold leading-6 text-indigo-600">
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
                   </p>
                 </dd>
               </div>

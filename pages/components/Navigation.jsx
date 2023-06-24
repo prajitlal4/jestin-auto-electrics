@@ -6,11 +6,13 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '/services/service1'},
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '/services/service2'},
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '/services/service3'},
+  { name: 'Mobile Auto Electrics', href: '/services/service1'},
+  { name: 'Mite site Heavy Machinery', href: '/services/service2'},
+  { name: 'Heavy Mechanical Mobile Repairs', href: '/services/service3'},
+  { name: 'Welding & Boilermaking', href: '/services/service4'},
 ]
 
 function classNames(...classes) {
@@ -21,12 +23,12 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-white top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <span className="sr-only">Jestin Auto Electrics</span>
+            <Image className="" src="/JestinAutoElectricsLogo.png" width={175} height={100} alt="" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -66,7 +68,6 @@ export default function Navigation() {
                         <div className="flex-auto">
                           <Link href={item.href} className="block font-semibold text-gray-900" onClick={() => close()}>
                             {item.name}
-                            <span className="absolute inset-0" />
                           </Link>
                         </div>
                       </div>
