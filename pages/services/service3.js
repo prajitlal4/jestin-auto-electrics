@@ -8,7 +8,7 @@ export default function Service3() {
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Specialized in Heavy Mechanical Mobile Repairs </h1>
         <p className="mt-6 text-xl leading-8">
         Jestin Auto Electrics stands out for its specialization in heavy mechanical mobile repairs. We understand that in industries like construction, 
-        mining, and transport, downtime equals lost revenue. That's why we have dedicated our expertise to deliver rapid, effective repairs for all 
+        mining, and transport, downtime equals lost revenue. That&apos;s why we have dedicated our expertise to deliver rapid, effective repairs for all 
         types of heavy mobile machinery. 
         <br /><br />
         Our team of experienced technicians can handle a wide array of mechanical issues, ensuring your heavy machinery is back in operation as quickly as possible.
