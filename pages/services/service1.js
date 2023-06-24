@@ -10,7 +10,7 @@ export default function Service1() {
         At Jestin Auto Electrics, we specialize in a wide range of services, ensuring your vehicles and machinery operate at peak performance. 
         Our expertise extends to specialized auto electrical and air conditioning installations, providing you with year-round comfort and reliability. 
         <br /><br />
-        Our team excels in diagnosing and rectifying faults, adhering to strict mine site specifications to ensure safety and productivity. We also bring music to your journey with our sound system installation services. But that's not all - we expertly repair starters and alternators to keep your engines running smoothly. Trust us for comprehensive, top-tier electrical services in Perth.
+        Our team excels in diagnosing and rectifying faults, adhering to strict mine site specifications to ensure safety and productivity. We also bring music to your journey with our sound system installation services. But that&apos;s not all - we expertly repair starters and alternators to keep your engines running smoothly. Trust us for comprehensive, top-tier electrical services in Perth.
         <br /><br />
         </p>
         <div className="mt-10 max-w-2xl">

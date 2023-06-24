@@ -15,7 +15,7 @@ export default function Hero() {
               Perth&apos;s trusted Auto Electrical company
             </h1>
             <p className="mt-6 text-lg leading-8 text-white font-medium">
-              Powering Perth's vehicles and heavy machinery with expert service and care.
+              Powering Perth&apos;s vehicles and heavy machinery with expert service and care.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
