@@ -43,7 +43,7 @@ export default function Service1() {
         <div className="mx-auto max-w-2xl pt-20">
           <div className="text-center">
             <p className="mt-6 text-xl leading-8 text-gray-900 font-medium">
-              Are you interested? Let's get to work.
+              Are you interested? Let&apos;s get to work.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
