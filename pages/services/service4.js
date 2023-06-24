@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Service4() {
@@ -36,10 +37,13 @@ export default function Service4() {
             </li>
           </ul>
         </div>
-        <img
-          src="https://img.freepik.com/free-photo/process-creating-new-metal-parts-busy-workshop-made-by-worker_613910-17218.jpg?w=1380&t=st=1687582685~exp=1687583285~hmac=71158d6b81fd879d323ad5357476d8f495c9ca39868e1c54abee06e52081fb55"
+        <Image
+          src="/Service4.jpg"
           alt=""
           className="inset-0 -z-10 h-full w-full object-cover brightness-[.80] mt-16"
+          width={1920}
+          height={1080}
+          loading="lazy"
         />
         <div className="mx-auto max-w-2xl pt-20">
           <div className="text-center">

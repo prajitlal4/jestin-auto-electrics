@@ -35,10 +35,13 @@ export default function Service3() {
             </li>
           </ul>
         </div>
-        <img
-          src="https://img.freepik.com/free-photo/combine-machine-service_146671-19097.jpg?w=1380&t=st=1687582258~exp=1687582858~hmac=d565d77936b886d4fe4977a038cde017f521781d571222c8baccfd15576e908f"
+        <Image
+          src="/Service3.jpg"
           alt=""
           className="inset-0 -z-10 h-full w-full object-cover brightness-[.80] mt-16"
+          width={1920}
+          height={1080}
+          loading="lazy"
         />
         <div className="mx-auto max-w-2xl pt-20">
           <div className="text-center">
