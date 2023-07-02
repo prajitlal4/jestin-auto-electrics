@@ -28,7 +28,7 @@ export default function Navigation() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Jestin Auto Electrics</span>
-            <Image className="" src="/JestinAutoElectricsLogo.png" width={175} height={100} alt="" />
+            <Image className="" src="/Logo 1.png" width={175} height={100} alt="" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -96,7 +96,7 @@ export default function Navigation() {
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto"
-                src="/JestinAutoElectricsLogo.png"
+                src="/Logo 1.png"
                 alt=""
                 width={1920}
                 height={1080}

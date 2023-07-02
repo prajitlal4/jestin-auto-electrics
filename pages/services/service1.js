@@ -17,19 +17,19 @@ export default function Service1() {
         <div className="mt-10 max-w-2xl">
           <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
             <li className="flex gap-x-3">
-              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
+              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-blue-400" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Diagnose, fault finding and mine site specification</strong>
               </span>
             </li>
             <li className="flex gap-x-3">
-              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
+              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-blue-400" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Sound system Installation</strong>
               </span>
             </li>
             <li className="flex gap-x-3">
-              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
+              <CheckCircleIcon className="mt-1 h-5 w-5 flex-none text-blue-400" aria-hidden="true" />
               <span>
                 <strong className="font-semibold text-gray-900">Starter and Alternator Repair </strong>
               </span>
@@ -52,7 +52,7 @@ export default function Service1() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/#contact"
-                className="rounded-md bg-yellow-400 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+                className="rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
               >
                 Contact us now!
               </Link>
