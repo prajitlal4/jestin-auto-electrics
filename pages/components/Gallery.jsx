@@ -15,7 +15,7 @@ export default function Gallery() {
                   everything from specialized auto electrical installations for personal vehicles to comprehensive servicing of heavy mobile machinery. 
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Whether it's diagnosing and rectifying electrical faults or performing critical mine shutdown repairs, we're always quick and effective in our response.
+                  Whether it&apos;s diagnosing and rectifying electrical faults or performing critical mine shutdown repairs, we&apos;re always quick and effective in our response.
                 </p>
               </div>
               <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
