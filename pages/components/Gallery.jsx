@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
+import { ArrowPathIcon, BoltIcon, SpeakerWaveIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 function Gallery() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -15,8 +16,35 @@ function Gallery() {
     setSelectedImage('');
   };
 
+  const features = [
+    {
+      name: 'Auto Electrician.',
+      description:
+        "Delivering expert auto electrical solutions tailored to your vehicle's needs.",
+      icon: BoltIcon,
+    },
+    {
+      name: 'Auto Air Conditioning and Re-Gas & Repairs.',
+      description:
+        'Comprehensive auto air conditioning services, from re-gassing to intricate repairs ensuring optimal climate control.',
+      icon: ArrowPathIcon,
+    },
+    {
+      name: 'Car sound accessories and installation.',
+      description:
+        'Professional installation of car sound accessories for an enhanced audio experience.',
+      icon: SpeakerWaveIcon,
+    },
+    {
+      name: 'Mine site Auto Sparky, specialised and contracting.',
+      description:
+        'Offering specialized electrical expertise for mine sites, from routine maintenance to contractual projects.',
+      icon: WrenchScrewdriverIcon,
+    },
+  ]
+
   return (
-    <div className="bg-white py-24 sm:pb-32">
+    <div className="bg-white py-20 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="overflow-hidden">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
@@ -26,21 +54,31 @@ function Gallery() {
                 At Jestin Auto Electrics, our expertise spans a broad spectrum of auto electrical and mechanical services. Our work encapsulates 
                 everything from specialized auto electrical installations for personal vehicles to comprehensive servicing of heavy mobile machinery. 
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600 lg:text-center">
-                Whether it&apos;s diagnosing and rectifying electrical faults or performing critical mine shutdown repairs, we&apos;re always quick and effective in our response.
-              </p>
+              <dl className="pt-20 grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                {features.map((feature) => (
+                  <div key={feature.name} className="relative pl-16">
+                    <dt className="text-base font-semibold leading-7 text-gray-900">
+                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                        <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                      </div>
+                      {feature.name}
+                    </dt>
+                    <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
             <div className="container flex flex-wrap mx-auto lg:pt-10">
-              <div className="p-2 rounded lg:w-1/3 w-1/2 " onClick={() => openModal('/gallery/image13.jpg')}>
+              <div className="p-2 rounded lg:w-1/3 w-1/2 " onClick={() => openModal('/gallery/image3.jpg')}>
                 <img
-                  src="/gallery/image13.jpg"
+                  src="/gallery/image3.jpg"
                   alt=""
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image11.jpg')}>
+              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image20.jpg')}>
                 <img
-                  src="/gallery/image11.jpg"
+                  src="/gallery/image20.jpg"
                   alt=""
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
@@ -52,9 +90,9 @@ function Gallery() {
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image19.jpg')}>
+              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image5.jpg')}>
                 <img
-                  src="/gallery/image19.jpg"
+                  src="/gallery/image5.jpg"
                   alt=""
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
