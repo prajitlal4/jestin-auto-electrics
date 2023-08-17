@@ -38,7 +38,7 @@ export default function Service4() {
           </ul>
         </div>
         <Image
-          src="/Service4.jpg"
+          src="/ServiceFour.jpg"
           alt=""
           className="inset-0 -z-10 h-full w-full object-cover brightness-[.80] mt-16"
           width={1920}
