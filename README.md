@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5029910d-b69e-44ef-bcc7-83ff42d2ca75/deploy-status)](https://app.netlify.com/sites/gleeful-bunny-1b0282/deploys)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
