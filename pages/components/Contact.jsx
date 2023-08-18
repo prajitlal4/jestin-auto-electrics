@@ -1,6 +1,34 @@
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid'
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        setShowModal(true);
+        setError(null);
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+
+    } catch (error) {
+      setError('There was a problem with the form submission. Please try again.');
+    }
+  };
+
   return (
     <div id="contact" className="relative isolate bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
@@ -38,7 +66,7 @@ export default function Contact() {
             </dl>
           </div>
         </div>
-        <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+        <form name="contact" onSubmit={handleSubmit} method="POST" data-netlify="true" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -122,6 +150,24 @@ export default function Contact() {
             </div>
           </div>
         </form>
+        {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded shadow-xl">
+            <h3 className="text-2xl mb-4">Thanks for submitting!</h3>
+            <p>We'll get back to you as soon as possible.</p>
+            <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setShowModal(false)}>Close</button>
+          </div>
+        </div>
+        )}
+        {error && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded shadow-xl">
+            <h3 className="text-2xl mb-4">There was an error submitting your form.</h3>
+            <p>Please try again.</p>
+            <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setShowModal(false)}>Close</button>
+          </div>
+        </div>
+        )}
       </div>
     </div>
   )
