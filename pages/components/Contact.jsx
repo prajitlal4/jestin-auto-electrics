@@ -164,7 +164,7 @@ export default function Contact() {
           <div className="bg-white p-8 rounded shadow-xl">
             <h3 className="text-2xl mb-4">There was an error submitting your form.</h3>
             <p>Please try again.</p>
-            <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setShowError(false)}>Close</button>
+            <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setError(null)}>Close</button>
           </div>
         </div>
         )}
