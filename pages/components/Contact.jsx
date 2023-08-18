@@ -154,7 +154,7 @@ export default function Contact() {
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded shadow-xl">
             <h3 className="text-2xl mb-4">Thanks for submitting!</h3>
-            <p>We'll get back to you as soon as possible.</p>
+            <p>We&apos;ll get back to you as soon as possible.</p>
             <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setShowModal(false)}>Close</button>
           </div>
         </div>
