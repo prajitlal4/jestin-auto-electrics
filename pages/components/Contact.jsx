@@ -10,6 +10,35 @@ export default function Contact() {
     
     const formData = new FormData(event.target);
 
+    //Extract values
+    const firstName = formData.get('first-name');
+    const lastName = formData.get('last-name');
+    const email = formData.get('email');
+    const phoneNumber = formData.get('phone-number');
+    const message = formData.get('message');
+
+    //Validation
+    if (!firstName.trim()) {
+      setError('First name is required.');
+      return;
+    }
+    if (!lastName.trim()) {
+      setError('Last name is required.');
+      return;
+    }
+    if (!email.trim()) {
+      setError('Email is required.');
+      return;
+    }
+    if (!phoneNumber.trim()) {
+      setError('Phone number is required.');
+      return;
+    }
+    if (!message.trim()) {
+      setError('Message is required.');
+      return;
+    }
+
     try {
       const response = await fetch("/", {
         method: "POST",
@@ -79,6 +108,7 @@ export default function Contact() {
                     type="text"
                     name="first-name"
                     id="first-name"
+                    required
                     autoComplete="given-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   />
@@ -94,6 +124,7 @@ export default function Contact() {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
+                    required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -108,6 +139,7 @@ export default function Contact() {
                     name="email"
                     id="email"
                     autoComplete="email"
+                    required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -122,6 +154,7 @@ export default function Contact() {
                     name="phone-number"
                     id="phone-number"
                     autoComplete="tel"
+                    required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -134,6 +167,7 @@ export default function Contact() {
                   <textarea
                     name="message"
                     id="message"
+                    required
                     rows={4}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
@@ -163,8 +197,8 @@ export default function Contact() {
         {error && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded shadow-xl">
-            <h3 className="text-2xl mb-4">There was an error submitting your form.</h3>
-            <p>Please try again.</p>
+            <h3 className="text-2xl mb-4">Error</h3>
+            <p>{error}</p>
             <button className='mt-6 rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600' onClick={() => setError(null)}>Close</button>
           </div>
         </div>
