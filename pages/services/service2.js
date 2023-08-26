@@ -1,10 +1,20 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Service1() {
   return (
     <div className="bg-white px-6 py-10 lg:px-8">
+      <Head>
+        <title>Heavy Machinery Repairs - Jestin Auto Electrics</title>
+        <meta name="description" content="Electrical and Air Conditioning solutions for heavy machinery in mine sites - prompt repairs and minimizing operational downtime." />
+        <meta property="og:title" content="Mobile Auto Electrics - Jestin Auto Electrics" />
+        <meta
+          property="og:description"
+          content="Electrical and Air Conditioning solutions for heavy machinery in mine sites - prompt repairs and minimizing operational downtime."
+        />
+      </Head>
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mine Site Auto Electrical Repairs for Heavy Machinery</h1>
         <p className="mt-6 text-xl leading-8">

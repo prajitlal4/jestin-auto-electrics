@@ -1,14 +1,24 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Service1() {
   return (
     <div className="bg-white px-6 py-10 lg:px-8">
+      <Head>
+        <title>Mobile Auto Electrics - Jestin Auto Electrics</title>
+        <meta name="description" content="Specialised in wide range of services, including Air Conditioning repairs, Sound System Installation and Mobile Auto Repairs." />
+        <meta property="og:title" content="Mobile Auto Electrics - Jestin Auto Electrics" />
+        <meta
+          property="og:description"
+          content="Specialised in wide range of services, including Air Conditioning repairs, Sound System Installation and Mobile Auto Repairs."
+        />
+      </Head>
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mobile Auto Electrics</h1>
         <p className="mt-6 text-xl leading-8">
-        At Jestin Auto Electrics, we specialize in a wide range of services, ensuring your vehicles and machinery operate at peak performance. 
+        At Jestin Auto Electrics, we specialise in a wide range of services, ensuring your vehicles and machinery operate at peak performance. 
         Our expertise extends to specialized auto electrical and air conditioning installations, providing you with year-round comfort and reliability. 
         <br /><br />
         Our team excels in diagnosing and rectifying faults, adhering to strict mine site specifications to ensure safety and productivity. We also bring music to your journey with our sound system installation services. But that&apos;s not all - we expertly repair starters and alternators to keep your engines running smoothly. Trust us for comprehensive, top-tier electrical services in Perth.

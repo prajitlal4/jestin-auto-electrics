@@ -1,10 +1,20 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Service4() {
   return (
     <div className="bg-white px-6 py-10 lg:px-8">
+      <Head>
+        <title>Specialized Welder and Boilermaker - Jestin Auto Electrics</title>
+        <meta name="description" content="Jestin Auto Electrics offers specialized welder and boilermaker services, mastering various welding processes to deliver durable, high-quality fabrications and structural work." />
+        <meta property="og:title" content="Specialized Welder and Boilermaker - Jestin Auto Electrics" />
+        <meta
+          property="og:description"
+          content="Jestin Auto Electrics offers specialized welder and boilermaker services, mastering various welding processes to deliver durable, high-quality fabrications and structural work."
+        />
+      </Head>
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Specialized Welder/Boilermaker</h1>
         <p className="mt-6 text-xl leading-8">

@@ -11,7 +11,6 @@ export default function Hero() {
           className="absolute inset-0 -z-10 h-full w-full object-cover brightness-[.75]"
           width={1920}
           height={1080}
-          loading="lazy"
         />
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
