@@ -70,44 +70,56 @@ function Gallery() {
             </div>
             <div className="container flex flex-wrap mx-auto lg:pt-10">
               <div className="p-2 rounded lg:w-1/3 w-1/2 " onClick={() => openModal('/gallery/image3.jpg')}>
-                <img
+                <Image
                   src="/gallery/image3.jpg"
                   alt=""
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
+                  width={1920}
+                  height={1080}
                 />
               </div>
               <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image20.jpg')}>
-                <img
+                <Image
                   src="/gallery/image20.jpg"
                   alt=""
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
+                  width={1920}
+                  height={1080}
                 />
               </div>
               <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image10.jpg')}>
-                <img
+                <Image
                   src="/gallery/image10.jpg"
                   alt=""
+                  width={1920}
+                  height={1080}
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>
               <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image5.jpg')}>
-                <img
+                <Image
                   src="/gallery/image5.jpg"
                   alt=""
+                  width={1920}
+                  height={1080}
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>
               <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image18.jpg')}>
-                <img
+                <Image
                   src="/gallery/image18.jpg"
                   alt=""
+                  width={1920}
+                  height={1080}
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>
               <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image1.jpg')}>
-                <img
+                <Image
                   src="/gallery/image1.jpg"
                   alt=""
+                  width={1920}
+                  height={1080}
                   className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
                 />
               </div>

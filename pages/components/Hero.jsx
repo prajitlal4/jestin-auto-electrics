@@ -1,9 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Hero() {
   return (
     <div className="bg-white">
+      <Head>
+        <title>Jestin Auto Electrics Perth</title>
+        <meta name="description" content="Perths trusted Auto Electrical Company - for all your installations and repairs." />
+        <meta property="og:title" content="Jestin Auto Electrics Perth" />
+        <meta
+          property="og:description"
+          content="Perths trusted Auto Electrical Company - for all your installation and repairs."
+        />
+      </Head>
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <Image
           src="/HeroImage.jpg"
