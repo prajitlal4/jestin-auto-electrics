@@ -1,12 +1,14 @@
+import ReviewField from "./ReviewField";
+
 const testimonials = [
   [
     [
       {
-        body: 'Outstanding attention to detail on a recent aircon service. Your team is skilled and professional!',
+        body: "Professional and quick service - recommend to everyone",
         author: {
-          name: 'John',
-          handle: 'john',
-          },
+          name: "John",
+          handle: "john",
+        },
       },
       // More testimonials...
     ],
@@ -14,34 +16,37 @@ const testimonials = [
   [
     [
       {
-        body: 'Had some structural work done by their boilermaker - impeccable quality and safety standards. Excellent job.',
+        body: "Had some structural work done by their boilermaker and it was done perfectly",
         author: {
-          name: 'Mike',
-          handle: 'mike',
-         },
+          name: "Mike",
+          handle: "mike",
+        },
       },
       // More testimonials...
     ],
     [
       {
-        body: 'Prompt, efficient, and friendly service during our mine shutdown repairs. Really minimized our downtime!',
+        body: "Great value work and amazing people to work with.",
         author: {
-          name: 'Brendan',
-          handle: 'brendan',
-          },
+          name: "Brendan",
+          handle: "brendan",
+        },
       },
       // More testimonials...
     ],
   ],
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Review() {
   return (
-    <div id="reviews" className="relative isolate bg-gray-100 pb-32 pt-24 sm:pt-32">
+    <div
+      id="reviews"
+      className="relative isolate bg-gray-100 pb-32 pt-24 sm:pt-32"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -50,16 +55,20 @@ export default function Review() {
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-1 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-3">
           {testimonials.map((columnGroup, columnGroupIdx) => (
-            <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
+            <div
+              key={columnGroupIdx}
+              className="space-y-8 xl:contents xl:space-y-0"
+            >
               {columnGroup.map((column, columnIdx) => (
                 <div
                   key={columnIdx}
                   className={classNames(
                     (columnGroupIdx === 0 && columnIdx === 0) ||
-                      (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
-                      ? 'xl:row-span-2'
-                      : 'xl:row-start-1',
-                    'space-y-8'
+                      (columnGroupIdx === testimonials.length - 1 &&
+                        columnIdx === columnGroup.length - 1)
+                      ? "xl:row-span-2"
+                      : "xl:row-start-1",
+                    "space-y-8"
                   )}
                 >
                   {column.map((testimonial) => (
@@ -72,7 +81,9 @@ export default function Review() {
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
                         <div>
-                          <div className="font-semibold">{testimonial.author.name}</div>
+                          <div className="font-semibold">
+                            {testimonial.author.name}
+                          </div>
                         </div>
                       </figcaption>
                     </figure>
@@ -82,7 +93,8 @@ export default function Review() {
             </div>
           ))}
         </div>
+        <ReviewField />
       </div>
     </div>
-  )
+  );
 }
