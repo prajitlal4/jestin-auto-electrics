@@ -54,6 +54,7 @@ export default function ReviewField() {
         data-netlify="true"
         className="mt-6"
       >
+        <input type="hidden" name="form-name" value="review" />
         <label
           htmlFor="name"
           className="block text-md font-medium leading-6 text-gray-900"
