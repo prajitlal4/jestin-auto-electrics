@@ -1,11 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { ArrowPathIcon, BoltIcon, SpeakerWaveIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 function Gallery() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const images = [
+    '/gallery/image3.jpg',
+    '/gallery/image20.jpg',
+    '/gallery/image10.jpg',
+    '/gallery/image5.jpg',
+    '/gallery/image18.jpg',
+    '/gallery/image1.jpg',
+  ]
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change image every 3 seconds
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentIndex]);
   const openModal = (src) => {
     setSelectedImage(src);
     setModalOpen(true);
@@ -68,72 +95,73 @@ function Gallery() {
                 ))}
               </dl>
             </div>
-            <div className="container flex flex-wrap mx-auto lg:pt-10">
-              <div className="p-2 rounded lg:w-1/3 w-1/2 " onClick={() => openModal('/gallery/image3.jpg')}>
-                <Image
-                  src="/gallery/image3.jpg"
-                  alt=""
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image20.jpg')}>
-                <Image
-                  src="/gallery/image20.jpg"
-                  alt=""
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                  width={1920}
-                  height={1080}
-                />
-              </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image10.jpg')}>
-                <Image
-                  src="/gallery/image10.jpg"
-                  alt=""
-                  width={1920}
-                  height={1080}
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                />
-              </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image5.jpg')}>
-                <Image
-                  src="/gallery/image5.jpg"
-                  alt=""
-                  width={1920}
-                  height={1080}
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                />
-              </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image18.jpg')}>
-                <Image
-                  src="/gallery/image18.jpg"
-                  alt=""
-                  width={1920}
-                  height={1080}
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                />
-              </div>
-              <div className="p-2 rounded lg:w-1/3 w-1/2" onClick={() => openModal('/gallery/image1.jpg')}>
-                <Image
-                  src="/gallery/image1.jpg"
-                  alt=""
-                  width={1920}
-                  height={1080}
-                  className="aspect-[4/3] w-[24rem]  rounded-2xl bg-gray-50 object-cover hover:opacity-90 hover:cursor-pointer"
-                />
-              </div>
-              {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex justify-center items-center z-50 px-10
-                transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}"
-                style={isModalOpen ? {} : { pointerEvents: 'none' }}>
-                  <div className="relative">
-                    <img src={selectedImage} alt="Enlarged" className="object-contain" />
-                    <button onClick={closeModal} className="absolute top-4 right-4 bg-white p-2 w-8 rounded-full drop-shadow-lg">x</button>
-                  </div>
-                </div>
-              )}
+            <div className="container flex flex-wrap flex-col mx-auto lg:pt-10">
+      <div className="overflow-hidden relative">
+        <div
+          className="flex transition-transform duration-500"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-full"
+              onClick={() => openModal(src)}
+            >
+              <Image
+                src={src}
+                alt={`Image ${index}`}
+                className="aspect-[4/3] w-full rounded-2xl bg-gray-50 object-cover cursor-pointer"
+                width={1920}
+                height={1080}
+              />
             </div>
+          ))}
+        </div>
+        <button
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-gray-600 p-3 rounded-full shadow-lg z-10 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-300 ease-in-out"
+          onClick={prevSlide}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-gray-600 p-3 rounded-full shadow-lg z-10 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-300 ease-in-out"
+          onClick={nextSlide}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Dots - Centered under the images */}
+      <div className="flex justify-center mt-4">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-colors duration-300 ${currentIndex === index ? 'bg-gray-800' : 'bg-gray-400'}`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className={`fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex justify-center items-center z-50 px-10 transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`}
+          style={isModalOpen ? {} : { pointerEvents: 'none' }}>
+          <div className="relative">
+            <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full object-contain" />
+            <button onClick={closeModal} className="absolute top-4 right-4 bg-white text-gray-600 p-3 rounded-full shadow-lg z-10 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-300 ease-in-out">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+    
           </div>
         </div>
       </div>
