@@ -14,6 +14,22 @@ function Gallery() {
     '/gallery/image5.jpg',
     '/gallery/image18.jpg',
     '/gallery/image1.jpg',
+    '/gallery/image_new_1.jpg',
+  '/gallery/image_new_2.jpg',
+  '/gallery/image_new_3.jpg',
+  '/gallery/image_new_4.jpg',
+  '/gallery/image_new_5.jpg',
+  '/gallery/image_new_6.jpg',
+  '/gallery/image_new_7.jpg',
+  '/gallery/image_new_8.jpg',
+  '/gallery/image_new_9.jpg',
+  '/gallery/image_new_10.jpg',
+  '/gallery/image_new_11.jpg',
+  '/gallery/image_new_12.jpg',
+  '/gallery/image_new_13.jpg',
+  '/gallery/image_new_14.jpg',
+  '/gallery/image_new_15.jpg',
+  '/gallery/image_new_16.jpg'
   ]
 
   const nextSlide = () => {
